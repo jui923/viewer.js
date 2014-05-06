@@ -43,6 +43,8 @@ Crocodoc.addComponent('page-links', function (scope) {
                 // don't embed this link... we don't trust the protocol
                 return;
             }
+            // add special rel attributes for a bit of extra security with shared links
+            attr.rel = 'noreferrer nofollow';
         } else if (link.destination) {
             attr.href = '#page-' + link.destination.pagenum;
         }
